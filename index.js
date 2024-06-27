@@ -15,7 +15,7 @@ async function fetch_release() {
     const tag = core.getInput("tag");
     const match = core.getInput("match");
 
-    const api_url = tag === '' ? `https://api.github.com/repos/${group}/${repo}/releases/latest`
+    const api_url = tag === '' ? `https://api.github.com/repos/${group}/${repo}/releases/${match}`
         : `https://api.github.com/repos/${group}/${repo}/releases/tags/${tag}`;
     const re = new RegExp(match);
 
